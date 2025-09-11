@@ -22,7 +22,7 @@ I sincerly hope this doesn't offend you, even these metadata files I used CoPilo
 | `ore_grantallkeys`       | Grants all progression keys                      |
 | `ore_resetkeys`          | Removes all progression keys from the player     |
 
-🗝️ Teleport Restriction Keys
+### 🗝️ Teleport Restriction Keys
 Gate of Ore-thority uses boss progression flags to restrict teleporting with specific items. These flags are stored in each player's custom data and are typically granted upon defeating the corresponding boss.
 | Item Name                 | Required Boss Flag       | Notes                      | 
 |-------------------------- |--------------------------|----------------------------| 
