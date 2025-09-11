@@ -1,6 +1,6 @@
 # Gate of Ore-thority
 
-**Boss-gated teleport restrictions with rich flavor text and full config flexibility.**  
+**Boss-gated teleport restrictions with lore themed flavour text and server sync capabilities.**  
 Crafted by Stayk, straight up this was vibe coded with CoPilot. I have no idea what I am doing when it comes to programming, but I wanted to learn.
 I sincerly hope this doesn't offend you, even these metadata files I used CoPilot to create
 
