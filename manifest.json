@@ -1,7 +1,7 @@
 {
   "name": "GateOfOrethority",
   "version_number": "1.0.1",
-  "description": "Boss-gated teleport restrictions with rich flavor text and config flexibility.",
+  "description": "Boss-gated teleport restrictions with lore themed flavour text and server sync capabilities.",
   "website_url": "https://github.com/Stayk118/GateOfOre-thority",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2100"
