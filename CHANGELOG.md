@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 — Bugfix Release
+- Fixed teleport blocker config sync casting error
+- Improved server-side enforcement logic
+- Cleaned up logging and prefab matching
+
 ## 1.0.0 — Initial Release
 
 - Added teleport gating based on boss progression keys

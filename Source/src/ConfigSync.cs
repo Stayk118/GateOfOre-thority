@@ -6,7 +6,7 @@ using BepInEx.Configuration;
 public static class ConfigSync
 {
     public static bool UseServerConfig = false;
-    public static Dictionary<string, object> ServerItemBossMap = new();
+    public static Dictionary<string, string> ServerItemBossMap = new();
 
     [HarmonyPatch(typeof(ZNet), "OnNewConnection")]
     public class ServerSendConfig
@@ -19,7 +19,7 @@ public static class ConfigSync
             foreach (var kvp in GateOfOrethority.ItemBossMap)
             {
                 pkg.Write(kvp.Key);
-                pkg.Write(kvp.Value.Value);
+                pkg.Write(kvp.Value);
             }
 
             peer.m_rpc.Invoke("GateOfOrethority_ReceiveConfig", pkg);

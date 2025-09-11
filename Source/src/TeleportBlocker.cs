@@ -14,7 +14,11 @@ public class TeleportBlocker
         foreach (var kvp in GateOfOrethority.ItemBossMap)
         {
             string itemName = kvp.Key;
-            string requiredKey = kvp.Value.Value;
+
+            // Determine which boss key to use: server-synced or local
+            string requiredKey = ConfigSync.UseServerConfig && ConfigSync.ServerItemBossMap.ContainsKey(itemName)
+                ? ConfigSync.ServerItemBossMap[itemName]
+                : kvp.Value;
 
             foreach (var item in items)
             {

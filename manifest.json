@@ -1,6 +1,6 @@
 {
   "name": "GateOfOrethority",
-  "version_number": "1.0.0",
+  "version_number": "1.0.1",
   "description": "Boss-gated teleport restrictions with rich flavor text and config flexibility.",
   "website_url": "https://github.com/Stayk118/GateOfOre-thority",
   "dependencies": [

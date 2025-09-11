@@ -4,12 +4,13 @@ using HarmonyLib;
 using BepInEx.Configuration;
 using System.Collections.Generic;
 
-[BepInPlugin("com.stayk.gateoforethority", "Gate of Ore-thority", "1.0.0")]
+[BepInPlugin("com.stayk.gateoforethority", "Gate of Ore-thority", "1.0.1")]
 public class GateOfOrethority : BaseUnityPlugin
 {
     public static ManualLogSource Log;
     public static ConfigEntry<bool> EnableServerOverride;
-    public static Dictionary<string, ConfigEntry<string>> ItemBossMap = new();
+    public static Dictionary<string, string> ItemBossMap = new(); // Enforced values only
+
     public static readonly List<string> AllBossKeys = new()
     {
         "defeated_eikthyr",
@@ -21,12 +22,14 @@ public class GateOfOrethority : BaseUnityPlugin
         "defeated_fader"
     };
 
+    private Dictionary<string, ConfigEntry<string>> RawConfigEntries = new();
+
     private void Awake()
     {
         Log = Logger;
 
         EnableServerOverride = Config.Bind("General", "EnableServerOverride", false,
-            "If true, clients will use server-synced boss flags for teleport restrictions.");
+            "If true, clients will use server-enforced boss flags for teleport restrictions.");
 
         RegisterItem("CopperOre", "defeated_elder");
         RegisterItem("TinOre", "defeated_elder");
@@ -55,15 +58,46 @@ public class GateOfOrethority : BaseUnityPlugin
         RegisterItem("FlametalNew", "defeated_fader");
         RegisterItem("FlametalOreNew", "defeated_fader");
 
+        EnforceServerConfig();
 
         Harmony.CreateAndPatchAll(typeof(GateOfOrethority).Assembly, null);
         Log.LogInfo("Gate of Ore-thority initialized with server override and player key support.");
     }
 
-    private void RegisterItem(string itemName, string bossKey)
+    private void RegisterItem(string itemName, string defaultBossKey)
     {
-        var entry = Config.Bind("TeleportRestrictions", itemName, bossKey,
+        var entry = Config.Bind("TeleportRestrictions", itemName, defaultBossKey,
             $"Boss flag required to teleport with {itemName}.");
-        ItemBossMap[itemName] = entry;
+        RawConfigEntries[itemName] = entry;
+    }
+
+    private void EnforceServerConfig()
+    {
+        bool isServer = ZNet.instance != null && ZNet.instance.IsServer();
+        bool overrideEnabled = EnableServerOverride.Value;
+
+        foreach (var kvp in RawConfigEntries)
+        {
+            string item = kvp.Key;
+            string bossKey = kvp.Value.Value;
+
+            if (!isServer && overrideEnabled)
+            {
+                // Enforce server-side values on clients
+                bossKey = kvp.Value.DefaultValue.ToString();
+                Log.LogInfo($"[Ore-thority] Overriding client config for '{item}' → '{bossKey}'");
+            }
+
+            ItemBossMap[item] = bossKey;
+        }
+
+        if (!isServer && overrideEnabled)
+        {
+            Log.LogInfo("[Ore-thority] Server override is active. Client config values have been replaced.");
+        }
+        else
+        {
+            Log.LogInfo("[Ore-thority] Using local config values.");
+        }
     }
 }

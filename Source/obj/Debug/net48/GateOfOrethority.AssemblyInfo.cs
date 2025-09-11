@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GateOfOrethority")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dafb693c87eda7031b5b0c585e3e1081275213b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f0e65229d67b82d83e2d3bcc76810aacc71448d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GateOfOrethority")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GateOfOrethority")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
