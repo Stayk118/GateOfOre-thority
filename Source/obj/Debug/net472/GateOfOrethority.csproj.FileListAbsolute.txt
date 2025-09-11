@@ -1,0 +1,5 @@
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net472\GateOfOrethority.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net472\GateOfOrethority.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net472\GateOfOrethority.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net472\GateOfOrethority.AssemblyInfo.cs
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net472\GateOfOrethority.csproj.CoreCompileInputs.cache

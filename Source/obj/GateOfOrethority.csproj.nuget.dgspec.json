@@ -1,0 +1,51 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\User\\OneDrive\\Documents\\Modding\\Valheim\\GateOfOre-thority-1\\Source\\GateOfOrethority.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\OneDrive\\Documents\\Modding\\Valheim\\GateOfOre-thority-1\\Source\\GateOfOrethority.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\Modding\\Valheim\\GateOfOre-thority-1\\Source\\GateOfOrethority.csproj",
+        "projectName": "GateOfOrethority",
+        "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\Modding\\Valheim\\GateOfOre-thority-1\\Source\\GateOfOrethority.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\Modding\\Valheim\\GateOfOre-thority-1\\Source\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

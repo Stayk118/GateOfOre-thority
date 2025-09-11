@@ -1,0 +1,17 @@
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\GateOfOrethority.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\GateOfOrethority.pdb
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\0Harmony.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\assembly_utils.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\assembly_valheim.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\BepInEx.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\netstandard.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\UnityEngine.CoreModule.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\bin\Debug\net48\UnityEngine.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOrethority.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOrethority.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOrethority.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOrethority.AssemblyInfo.cs
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOrethority.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOr.A81EA97C.Up2Date
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOrethority.dll
+C:\Users\User\OneDrive\Documents\Modding\Valheim\GateOfOrethority\obj\Debug\net48\GateOfOrethority.pdb
