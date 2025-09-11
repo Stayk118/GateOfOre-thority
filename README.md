@@ -55,20 +55,20 @@ If EnableServerOverride is enabled in the config, clients will use the server-de
 ## 🔄 Server Settings Sync
 
 Gate of Ore-thority supports server-enforced teleport restrictions to ensure consistent gameplay across multiplayer sessions.
-# 🧩 How It Works
+### 🧩 How It Works
 - When EnableServerOverride = true on the server, all connected clients will receive the server’s item-to-boss flag mappings.
 - These mappings are sent via custom RPC when a client connects.
 - Clients will override their local config values with the server’s enforced settings.
 - This ensures that teleport restrictions are consistent, even if players have modified their local configs.
-# 📦 Synced Data
+### 📦 Synced Data
 The following data is synced from server to client:
 - Item prefab names (e.g. CopperOre, BlackMetalScrap)
 - Required boss flags (e.g. defeated_elder, defeated_yagluth)
-# 🔐 Enforcement Logic
+### 🔐 Enforcement Logic
 - On the client, teleport checks use the server-synced values if available.
 - If no server sync is received, the client falls back to local config values.
 - This behavior is controlled by the EnableServerOverride flag.
-# 🛠️ Config Flag
+### 🛠️ Config Flag
 [General]
 EnableServerOverride = true
 
