@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.2 - README Update
+- Added information to readme
+
 ## 1.0.1 — Bugfix Release
 - Fixed teleport blocker config sync casting error
 - Improved server-side enforcement logic
