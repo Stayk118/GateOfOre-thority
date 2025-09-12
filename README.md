@@ -12,6 +12,10 @@ I sincerly hope this doesn't offend you, even these metadata files I used CoPilo
 - 🧪 **Console Commands**: Grant, revoke, list, or reset progression keys for testing and admin control.
 - 🧠 **Multiplayer-Aware**: Works in both solo and multiplayer environments.
 
+## 🌍 World Modifier Requirement: Casual Portals
+
+Gate of Ore-thority assumes that your world uses the Casual Portals modifier, which allows players to teleport with ores and other heavy items. This is essential for the mod’s teleport restriction system to function meaningfully—without it, players would be blocked by vanilla mechanics before your mod even runs its checks.
+
 ## 🛠 Console Commands
 
 | Command                  | Description                                      |
@@ -47,6 +51,24 @@ Gate of Ore-thority uses boss progression flags to restrict teleporting with spe
 | Flametal                  | defeated_fader           | Not currently used in-game | 
 | FlametalNew               | defeated_fader           |                            | 
 | FlametalOreNew            | defeated_fader           |                            |
+
+## 🧙 Multiplayer Boss Flag Behavior
+
+Gate of Ore-thority relies on boss progression flags (e.g. defeated_bonemass) stored in each player’s custom data to determine teleport eligibility. These flags are typically granted when a boss is defeated—but how they’re distributed in multiplayer depends on proximity.
+
+### 🔑 How Boss Flags Are Granted
+- When a boss is killed, all players who are logged in and nearby will receive the corresponding boss flag.
+- The flag is stored in each player’s m_customData and used by this mod to gate teleport access.
+- The flag is not limited to the player who lands the killing blow.
+
+### 📍 What Counts as “Nearby”?
+- Players within approximately 100–150 meters of the boss at the moment of death are considered nearby.
+- This includes anyone actively participating in the fight or spectating within render/combat range.
+- Players who are far away (e.g. in another biome or dungeon) or offline will not receive the flag automatically.
+
+### 🛠️ Mod Behavior
+- Gate of Ore-thority checks each player’s m_customData for the required boss flag before allowing teleportation with gated items.
+- If a player did not receive the flag due to distance or timing, they will be blocked from teleporting with those items until the flag is granted manually or via another mod.
 
 ## 🔐 Server Override
 
