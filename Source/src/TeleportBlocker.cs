@@ -8,6 +8,12 @@ public class TeleportBlocker
 {
     static bool Prefix(Player __instance, Vector3 pos, Quaternion rot, bool distantTeleport)
     {
+        // If non-distance Teleport (AKA dungeon entrance) automatically allow)
+        if (!distantTeleport)
+        {
+            return true;
+        }
+
         var inventory = __instance.GetInventory();
         var items = inventory.GetAllItems();
 
