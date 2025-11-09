@@ -4,7 +4,7 @@ using HarmonyLib;
 using BepInEx.Configuration;
 using System.Collections.Generic;
 
-[BepInPlugin("com.stayk.gateoforethority", "Gate of Ore-thority", "1.0.2")]
+[BepInPlugin("com.stayk.gateoforethority", "Gate of Ore-thority", "1.0.3")]
 public class GateOfOrethority : BaseUnityPlugin
 {
     public static ManualLogSource Log;

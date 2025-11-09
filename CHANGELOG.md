@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.3 - Dungeon logic fix
+- Thanks to DaCylops for submitting a bug fix stopping players from accessing dungeons with a blocked material
+
 ## 1.0.2 - README Update
 - Added information to readme
 
