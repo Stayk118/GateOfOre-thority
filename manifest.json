@@ -1,0 +1,9 @@
+{
+  "name": "GateOfOrethority",
+  "version_number": "1.0.7",
+  "description": "Biome boss portal restrictions",
+  "website_url": "https://github.com/Stayk118/GateOfOre-thority",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2100"
+  ]
+}

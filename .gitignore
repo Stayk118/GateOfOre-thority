@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+.vscode/
+.idea/
+*.zip
+*.user
+*.suo
+*.txt
+Thumbs.db
+.DS_Store

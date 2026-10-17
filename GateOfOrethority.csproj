@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>GateOfOrethority</AssemblyName>
+    <RootNamespace>GateOfOrethority</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+
+    <!-- Point this at your Valheim install. Referencing your own install means the
+         build always matches whatever game version you actually have - no pinned
+         package versions to go stale after a game update.
+         Either edit the path below, or set a VALHEIM_INSTALL environment variable
+         (which takes priority if present). -->
+    <ValheimInstallDir Condition="'$(VALHEIM_INSTALL)' != ''">$(VALHEIM_INSTALL)</ValheimInstallDir>
+    <ValheimInstallDir Condition="'$(ValheimInstallDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Valheim</ValheimInstallDir>
+
+    <ValheimManagedDir>$(ValheimInstallDir)\valheim_Data\Managed</ValheimManagedDir>
+    <BepInExCoreDir>$(ValheimInstallDir)\BepInEx\core</BepInExCoreDir>
+    <OutputPluginDir>$(ValheimInstallDir)\BepInEx\plugins\GateOfOrethority</OutputPluginDir>
+  </PropertyGroup>
+
+  <!-- Fail early with a readable message instead of six confusing "type not found" errors. -->
+  <Target Name="VerifyValheimPath" BeforeTargets="BeforeBuild">
+    <Error Condition="!Exists('$(ValheimManagedDir)')"
+           Text="Could not find '$(ValheimManagedDir)'. Edit ValheimInstallDir in GateOfOrethority.csproj (or set the VALHEIM_INSTALL environment variable) to your Valheim install folder." />
+    <Error Condition="!Exists('$(BepInExCoreDir)')"
+           Text="Could not find '$(BepInExCoreDir)'. Is BepInEx installed into your Valheim folder?" />
+  </Target>
+
+  <ItemGroup>
+    <!-- Private=false on all of these: they're compile-time references only. The real
+         assemblies are already present at runtime in any Valheim + BepInEx install,
+         so they must NOT be copied into the build output or shipped with the mod. -->
+
+    <!-- Game assemblies -->
+    <Reference Include="assembly_valheim">
+      <HintPath>$(ValheimManagedDir)\assembly_valheim.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_utils">
+      <HintPath>$(ValheimManagedDir)\assembly_utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- Unity assemblies -->
+    <Reference Include="UnityEngine">
+      <HintPath>$(ValheimManagedDir)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ValheimManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- BepInEx / Harmony -->
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExCoreDir)\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExCoreDir)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Copies the built DLL into BepInEx/plugins/GateOfOrethority after each build,
+       so you can rebuild and launch the game without a manual copy step. -->
+  <Target Name="CopyToPlugins" AfterTargets="Build">
+    <MakeDir Directories="$(OutputPluginDir)" Condition="!Exists('$(OutputPluginDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(OutputPluginDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>
